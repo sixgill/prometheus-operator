@@ -9,7 +9,8 @@ spec:
   endpoints:
   - port: http-metrics
     interval: 30s
-  - port: cadvisor
+  - path: /metrics/cadvisor # This is for cAdvisor in K8s 1.7.3+
+    port: http-metrics
     interval: 30s
     honorLabels: true
   selector:
